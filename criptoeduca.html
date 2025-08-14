@@ -1,0 +1,111 @@
+// Site de Doações Cripto - 
+// Framework: React com Tailwind CSS via CDN
+
+import React from "react";
+
+export default function CryptoDonation() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-white text-gray-800 font-sans">
+      <header className="bg-white shadow-md p-4 sticky top-0 z-50">
+        <nav className="max-w-6xl mx-auto flex justify-between items-center">
+          
+          <ul className="hidden md:flex space-x-6 text-sm font-medium">
+            <li><a href="#home" className="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="#sobre" className="hover:text-blue-600 transition">Sobre</a></li>
+            <li><a href="#doacoes" className="hover:text-blue-600 transition">Doar</a></li>
+            <li><a href="#conteudo" className="hover:text-blue-600 transition">Conteúdo</a></li>
+            <li><a href="#comecar" className="hover:text-blue-600 transition">Comece Agora</a></li>
+            <li><a href="#seguranca" className="hover:text-blue-600 transition">Segurança</a></li>
+            <li><a href="#contato" className="hover:text-blue-600 transition">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="home" className="text-center py-24 bg-gradient-to-br from-blue-50 to-white px-4">
+        <h1 className="text-5xl font-extrabold mb-6 text-blue-700">Apoie a Educação Cripto no Brasil</h1>
+        <h2 className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.
+        </h2>
+      </section>
+
+      <section id="sobre" className="max-w-4xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">Quem está por trás dessa iniciativa?</h2>
+        <p className="text-gray-700 text-lg leading-7">
+          Olá, eu sou Henrique Rodrigues, entusiasta e educador cripto há mais de 7 anos.
+          Ao longo desse tempo, já ajudei mais de 50 pessoas a acessarem esse universo e aprenderem sobre essa tecnologia que está cada vez mais presente na nossa rotina.
+          Acredito que a educação financeira e o conhecimento sobre criptoativos são ferramentas poderosas para transformar vidas e criar novas oportunidades no Brasil.
+          Com a sua ajuda, quero expandir conteúdos educativos, criar materiais gratuitos, realizar palestras e levar a cultura cripto a mais pessoas.
+        </p>
+      </section>
+
+      <section id="conteudo" className="bg-white py-16 px-6">
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Como sua contribuição faz a diferença</h2>
+        <ul className="list-disc max-w-3xl mx-auto space-y-4 text-gray-700 text-lg">
+          <li>Produção de artigos, vídeos e guias gratuitos sobre criptomoedas.</li>
+          <li>Organização de palestras e workshops online e presenciais.</li>
+          <li>Criação e manutenção de plataformas educacionais acessíveis a todos.</li>
+          <li>Apoio a iniciativas que incentivem o uso consciente de cripto no dia a dia.</li>
+        </ul>
+      </section>
+
+      <section id="doacoes" className="py-16 px-6 bg-gradient-to-br from-slate-50 to-white">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">Endereços para Doação</h2>
+        <p className="mb-6 text-gray-600 text-lg">Envie o valor que desejar em criptomoeda diretamente para os endereços abaixo. Sempre confirme o endereço antes de transferir.</p>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="p-4 border rounded-lg bg-white shadow">
+            <h3 className="font-bold">Bitcoin (BTC)</h3>
+            <p className="text-sm text-gray-600">Rede Bitcoin</p>
+            <p className="mt-2 break-all text-gray-800">bc1qs8tnhjmeufltccny402g7em42up2ggg7mqt568</p>
+          </div>
+          <div className="p-4 border rounded-lg bg-white shadow">
+            <h3 className="font-bold">Ethereum (ETH)</h3>
+            <p className="text-sm text-gray-600">Rede Ethereum</p>
+            <p className="mt-2 break-all text-gray-800">0xa6F907DC46ddaE48DE9910A33bbdC52105F54F88</p>
+          </div>
+          <div className="p-4 border rounded-lg bg-white shadow">
+            <h3 className="font-bold">Chainlink (LINK)</h3>
+            <p className="text-sm text-gray-600">Rede Ethereum</p>
+            <p className="mt-2 break-all text-gray-800">0xa462B22bB1d1fEbaf93dBa573c4C639dd91Bc4De</p>
+          </div>
+          <div className="p-4 border rounded-lg bg-white shadow">
+            <h3 className="font-bold">Uniswap (UNI)</h3>
+            <p className="text-sm text-gray-600">Rede Ethereum</p>
+            <p className="mt-2 break-all text-gray-800">0x4D7Ed65E18e05c7F932CC33dDC6FD7944438cb15</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="comecar" className="bg-white py-16 px-6">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">Você ainda não conhece o mundo cripto?</h2>
+        <p className="mb-6 text-gray-700 text-lg">Crie sua conta gratuita em uma das corretoras abaixo. Você não tem custo para abrir sua conta e começar a negociar. Usando o link de indicação, ainda ganha bônus ao iniciar seus investimentos.</p>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="p-4 border rounded-lg bg-slate-50 shadow">
+            <h3 className="font-bold">Novadax</h3>
+            <p>Ideal para iniciantes. Corretora nacional, regulamentada, interface em português, atendimento no Brasil.</p>
+            <a href="https://www.novadax.com.br/sign?c=Y9NA35&s=1" className="text-blue-600 hover:underline mt-2 block">Abrir conta e ganhar R$25</a>
+          </div>
+          <div className="p-4 border rounded-lg bg-slate-50 shadow">
+            <h3 className="font-bold">Crypto.com</h3>
+            <p>Uma das maiores corretoras do mundo, disponível no Brasil. Interface completa, recursos avançados, patrocinadora oficial da Fórmula 1.</p>
+            <a href="https://crypto.com/app/rv4mhrkjc7" className="text-blue-600 hover:underline mt-2 block">Abrir conta e ganhar até R$25</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="seguranca" className="bg-red-50 text-red-800 py-12 px-6 mt-12">
+        <h2 className="text-2xl font-bold mb-4">Aviso de Segurança</h2>
+        <ul className="list-disc space-y-2 max-w-2xl mx-auto text-lg">
+          <li>Sempre confirme o endereço antes de enviar criptomoedas.</li>
+          <li>Não solicitamos informações pessoais.</li>
+          <li>Não enviamos mensagens pedindo depósitos.</li>
+          <li>Use apenas os endereços listados neste site.</li>
+        </ul>
+      </section>
+
+      <footer id="contato" className="text-center text-gray-500 text-sm py-8 border-t mt-16">
+        Projeto  — Apoie iniciativas educativas com cripto. <br/>
+        &copy; {new Date().getFullYear()} Henrique Rodrigues.
+      </footer>
+    </div>
+  );
+}
