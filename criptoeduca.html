@@ -1,111 +1,567 @@
-// Site de Doações Cripto - 
-// Framework: React com Tailwind CSS via CDN
-
-import React from "react";
-
-export default function CryptoDonation() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-white text-gray-800 font-sans">
-      <header className="bg-white shadow-md p-4 sticky top-0 z-50">
-        <nav className="max-w-6xl mx-auto flex justify-between items-center">
-          
-          <ul className="hidden md:flex space-x-6 text-sm font-medium">
-            <li><a href="#home" className="hover:text-blue-600 transition">Home</a></li>
-            <li><a href="#sobre" className="hover:text-blue-600 transition">Sobre</a></li>
-            <li><a href="#doacoes" className="hover:text-blue-600 transition">Doar</a></li>
-            <li><a href="#conteudo" className="hover:text-blue-600 transition">Conteúdo</a></li>
-            <li><a href="#comecar" className="hover:text-blue-600 transition">Comece Agora</a></li>
-            <li><a href="#seguranca" className="hover:text-blue-600 transition">Segurança</a></li>
-            <li><a href="#contato" className="hover:text-blue-600 transition">Contato</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <section id="home" className="text-center py-24 bg-gradient-to-br from-blue-50 to-white px-4">
-        <h1 className="text-5xl font-extrabold mb-6 text-blue-700">Apoie a Educação Cripto no Brasil</h1>
-        <h2 className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.
-        </h2>
-      </section>
-
-      <section id="sobre" className="max-w-4xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Quem está por trás dessa iniciativa?</h2>
-        <p className="text-gray-700 text-lg leading-7">
-          Olá, eu sou Henrique Rodrigues, entusiasta e educador cripto há mais de 7 anos.
-          Ao longo desse tempo, já ajudei mais de 50 pessoas a acessarem esse universo e aprenderem sobre essa tecnologia que está cada vez mais presente na nossa rotina.
-          Acredito que a educação financeira e o conhecimento sobre criptoativos são ferramentas poderosas para transformar vidas e criar novas oportunidades no Brasil.
-          Com a sua ajuda, quero expandir conteúdos educativos, criar materiais gratuitos, realizar palestras e levar a cultura cripto a mais pessoas.
-        </p>
-      </section>
-
-      <section id="conteudo" className="bg-white py-16 px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Como sua contribuição faz a diferença</h2>
-        <ul className="list-disc max-w-3xl mx-auto space-y-4 text-gray-700 text-lg">
-          <li>Produção de artigos, vídeos e guias gratuitos sobre criptomoedas.</li>
-          <li>Organização de palestras e workshops online e presenciais.</li>
-          <li>Criação e manutenção de plataformas educacionais acessíveis a todos.</li>
-          <li>Apoio a iniciativas que incentivem o uso consciente de cripto no dia a dia.</li>
-        </ul>
-      </section>
-
-      <section id="doacoes" className="py-16 px-6 bg-gradient-to-br from-slate-50 to-white">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Endereços para Doação</h2>
-        <p className="mb-6 text-gray-600 text-lg">Envie o valor que desejar em criptomoeda diretamente para os endereços abaixo. Sempre confirme o endereço antes de transferir.</p>
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="p-4 border rounded-lg bg-white shadow">
-            <h3 className="font-bold">Bitcoin (BTC)</h3>
-            <p className="text-sm text-gray-600">Rede Bitcoin</p>
-            <p className="mt-2 break-all text-gray-800">bc1qs8tnhjmeufltccny402g7em42up2ggg7mqt568</p>
-          </div>
-          <div className="p-4 border rounded-lg bg-white shadow">
-            <h3 className="font-bold">Ethereum (ETH)</h3>
-            <p className="text-sm text-gray-600">Rede Ethereum</p>
-            <p className="mt-2 break-all text-gray-800">0xa6F907DC46ddaE48DE9910A33bbdC52105F54F88</p>
-          </div>
-          <div className="p-4 border rounded-lg bg-white shadow">
-            <h3 className="font-bold">Chainlink (LINK)</h3>
-            <p className="text-sm text-gray-600">Rede Ethereum</p>
-            <p className="mt-2 break-all text-gray-800">0xa462B22bB1d1fEbaf93dBa573c4C639dd91Bc4De</p>
-          </div>
-          <div className="p-4 border rounded-lg bg-white shadow">
-            <h3 className="font-bold">Uniswap (UNI)</h3>
-            <p className="text-sm text-gray-600">Rede Ethereum</p>
-            <p className="mt-2 break-all text-gray-800">0x4D7Ed65E18e05c7F932CC33dDC6FD7944438cb15</p>
-          </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apoie a educação sobre criptomoedas no Brasil. Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.">
+    <meta property="og:title" content="Apoie a Educação Cripto no Brasil">
+    <meta property="og:description" content="Iniciativa para educar sobre criptomoedas e finanças descentralizadas. Doe e ajude a expandir o conhecimento.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://doe-cripto-educacao.com">
+    <title>Apoie a Educação Cripto no Brasil | Doe em Criptomoedas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #3B82F6, #10B981);
+        }
+        
+        .crypto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-mobile {
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Educação Cripto Brasil",
+      "url": "https://doe-cripto-educacao.com",
+      "logo": "https://doe-cripto-educacao.com/logo.png",
+      "description": "Iniciativa para educar sobre criptomoedas e finanças descentralizadas no Brasil",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">CriptoEduca</a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
+                <a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition">Sobre</a>
+                <a href="#doacoes" class="text-gray-700 hover:text-primary font-medium transition">Doar</a>
+                <a href="#conteudo" class="text-gray-700 hover:text-primary font-medium transition">Conteúdo</a>
+                <a href="#comecar" class="text-gray-700 hover:text-primary font-medium transition">Comece Agora</a>
+                <a href="#seguranca" class="text-gray-700 hover:text-primary font-medium transition">Segurança</a>
+                <a href="#contato" class="text-gray-700 hover:text-primary font-medium transition">Contato</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-      </section>
-
-      <section id="comecar" className="bg-white py-16 px-6">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Você ainda não conhece o mundo cripto?</h2>
-        <p className="mb-6 text-gray-700 text-lg">Crie sua conta gratuita em uma das corretoras abaixo. Você não tem custo para abrir sua conta e começar a negociar. Usando o link de indicação, ainda ganha bônus ao iniciar seus investimentos.</p>
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="p-4 border rounded-lg bg-slate-50 shadow">
-            <h3 className="font-bold">Novadax</h3>
-            <p>Ideal para iniciantes. Corretora nacional, regulamentada, interface em português, atendimento no Brasil.</p>
-            <a href="https://www.novadax.com.br/sign?c=Y9NA35&s=1" className="text-blue-600 hover:underline mt-2 block">Abrir conta e ganhar R$25</a>
-          </div>
-          <div className="p-4 border rounded-lg bg-slate-50 shadow">
-            <h3 className="font-bold">Crypto.com</h3>
-            <p>Uma das maiores corretoras do mundo, disponível no Brasil. Interface completa, recursos avançados, patrocinadora oficial da Fórmula 1.</p>
-            <a href="https://crypto.com/app/rv4mhrkjc7" className="text-blue-600 hover:underline mt-2 block">Abrir conta e ganhar até R$25</a>
-          </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="menu-mobile hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
+                <a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition">Sobre</a>
+                <a href="#doacoes" class="text-gray-700 hover:text-primary font-medium transition">Doar</a>
+                <a href="#conteudo" class="text-gray-700 hover:text-primary font-medium transition">Conteúdo</a>
+                <a href="#comecar" class="text-gray-700 hover:text-primary font-medium transition">Comece Agora</a>
+                <a href="#seguranca" class="text-gray-700 hover:text-primary font-medium transition">Segurança</a>
+                <a href="#contato" class="text-gray-700 hover:text-primary font-medium transition">Contato</a>
+            </div>
         </div>
-      </section>
+    </header>
 
-      <section id="seguranca" className="bg-red-50 text-red-800 py-12 px-6 mt-12">
-        <h2 className="text-2xl font-bold mb-4">Aviso de Segurança</h2>
-        <ul className="list-disc space-y-2 max-w-2xl mx-auto text-lg">
-          <li>Sempre confirme o endereço antes de enviar criptomoedas.</li>
-          <li>Não solicitamos informações pessoais.</li>
-          <li>Não enviamos mensagens pedindo depósitos.</li>
-          <li>Use apenas os endereços listados neste site.</li>
-        </ul>
-      </section>
+    <!-- Hero Section -->
+    <section id="home" class="py-20 md:py-28 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Apoie a Educação Cripto no Brasil</h1>
+                <h2 class="text-xl md:text-2xl text-gray-700 mb-8">Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#doacoes" class="bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition shadow-md">Doar Agora</a>
+                    <a href="#comecar" class="bg-white hover:bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-lg transition shadow-md">Começar no Mundo Cripto</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <footer id="contato" className="text-center text-gray-500 text-sm py-8 border-t mt-16">
-        Projeto  — Apoie iniciativas educativas com cripto. <br/>
-        &copy; {new Date().getFullYear()} Henrique Rodrigues.
-      </footer>
-    </div>
-  );
-}
+    <!-- About Section -->
+    <section id="sobre" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quem está por trás dessa iniciativa?</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-8 animate-slide-up">
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="w-48 h-48 rounded-full bg-gradient-to-r from-primary to-secondary p-1">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Henrique Rodrigues" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg text-gray-700 mb-6">
+                            Olá, eu sou Henrique Rodrigues, entusiasta e educador cripto há mais de 7 anos. Ao longo desse tempo, já ajudei mais de 50 pessoas a acessarem esse universo e aprenderem sobre essa tecnologia que está cada vez mais presente na nossa rotina.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Acredito que a educação financeira e o conhecimento sobre criptoativos são ferramentas poderosas para transformar vidas e criar novas oportunidades no Brasil. Com a sua ajuda, quero expandir conteúdos educativos, criar materiais gratuitos, realizar palestras e levar a cultura cripto a mais pessoas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Donations Will Be Used -->
+    <section id="conteudo" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Como sua contribuição faz a diferença</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Conteúdo Educativo</h3>
+                        </div>
+                        <p class="text-gray-600">Produção de artigos, vídeos e guias gratuitos sobre criptomoedas, blockchain e finanças descentralizadas.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Eventos e Workshops</h3>
+                        </div>
+                        <p class="text-gray-600">Organização de palestras e workshops online e presenciais para democratizar o acesso ao conhecimento.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Plataformas Educacionais</h3>
+                        </div>
+                        <p class="text-gray-600">Criação e manutenção de plataformas educacionais acessíveis a todos, independentemente de condições financeiras.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Iniciativas de Inclusão</h3>
+                        </div>
+                        <p class="text-gray-600">Apoio a iniciativas que incentivem o uso consciente de cripto no dia a dia e promovam a inclusão financeira.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="doacoes" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Endereços para Doação</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                    <p class="text-lg text-gray-600 mt-4">Envie o valor que desejar em criptomoeda diretamente para os endereços abaixo. Sempre confirme o endereço antes de transferir.</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Bitcoin -->
+                    <div class="crypto-card bg-gray-50 p-6 rounded-xl border border-gray-200 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-orange-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#F7931A"/>
+                                    <path d="M18.648 13.254c.152-1.016-.62-1.562-1.678-1.927l.343-1.371-.837-.209-.333 1.332a44.14 44.14 0 00-.672-.158l.336-1.34-.835-.208-.343 1.372c-.183-.042-.363-.085-.536-.13l.001-.005-1.154-.288-.222.891s.62.142.607.15c.34.085.401.31.391.49l-.392 1.57c.023.006.054.014.089.027l-.09-.022-.555 2.222c-.042.107-.149.268-.392.207.009.013-.61-.152-.61-.152l-.416.937 1.092.272c.203.051.402.104.597.151l-.345 1.38.834.208.343-1.373c.229.062.451.119.665.172l-.342 1.368.837.209.344-1.375c1.422.269 2.492.16 2.944-1.125.367-1.034.183-2.304-.957-2.851.68-.16 1.192-.616 1.329-1.558zm-1.91 2.538c-.26 1.042-2.02.479-2.59.338l.463-1.853c.57.142 2.4.405 2.127 1.515zm.26-2.567c-.237.95-1.704.468-2.181.351l.42-1.681c.477.119 2.003.332 1.761 1.33z" fill="#FFF"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Bitcoin (BTC)</h3>
+                            <span class="ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">Rede Bitcoin</span>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" value="bc1qs8tnhjmeufltccny402g7em42up2ggg7mqt568" id="btc-address" class="flex-1 bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-gray-700 focus:outline-none" readonly>
+                            <button onclick="copyToClipboard('btc-address')" class="copy-btn bg-primary hover:bg-blue-600 text-white py-2 px-4 rounded-r-lg transition">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ethereum -->
+                    <div class="crypto-card bg-gray-50 p-6 rounded-xl border border-gray-200 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-purple-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#627EEA"/>
+                                    <path d="M12.373 3v6.652l5.623 2.513L12.373 3z" fill="#FFF" fill-opacity=".602"/>
+                                    <path d="M12.373 3L6.75 12.165l5.623-2.512V3z" fill="#FFF" fill-opacity=".602"/>
+                                    <path d="M12.373 16.476v4.52L18 13.212l-5.627 3.264z" fill="#FFF" fill-opacity=".602"/>
+                                    <path d="M12.373 20.996v-4.52L6.75 13.212 12.373 20.996z" fill="#FFF" fill-opacity=".602"/>
+                                    <path d="M12.373 15.429l5.623-3.264-5.622-2.511v5.775z" fill="#FFF"/>
+                                    <path d="M6.75 12.165l5.623 3.264V9.654L6.75 12.165z" fill="#FFF"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Ethereum (ETH)</h3>
+                            <span class="ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">Rede Ethereum</span>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" value="0xa6F907DC46ddaE48DE9910A33bbdC52105F54F88" id="eth-address" class="flex-1 bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-gray-700 focus:outline-none" readonly>
+                            <button onclick="copyToClipboard('eth-address')" class="copy-btn bg-primary hover:bg-blue-600 text-white py-2 px-4 rounded-r-lg transition">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chainlink -->
+                    <div class="crypto-card bg-gray-50 p-6 rounded-xl border border-gray-200 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#2A5ADA"/>
+                                    <path d="M12.373 15.838l2.744-1.514.639 1.117-3.383 1.864v1.995l5.623-3.24v-6.471l-5.623-3.24v6.472l-2.745-1.514-.639 1.117 3.384 1.864v-3.73l5.623-3.24V5.372l-5.623 3.24V5.372L6.75 8.612v6.471l5.623 3.24v-2.486z" fill="#FFF"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Chainlink (LINK)</h3>
+                            <span class="ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">Rede Ethereum</span>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" value="0xa462B22bB1d1fEbaf93dBa573c4C639dd91Bc4De" id="link-address" class="flex-1 bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-gray-700 focus:outline-none" readonly>
+                            <button onclick="copyToClipboard('link-address')" class="copy-btn bg-primary hover:bg-blue-600 text-white py-2 px-4 rounded-r-lg transition">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Uniswap -->
+                    <div class="crypto-card bg-gray-50 p-6 rounded-xl border border-gray-200 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#FF007A"/>
+                                    <path d="M7.523 15.541l4.85 2.805v-5.62l-4.85-2.805v5.62zm-1.588-6.916l6.438 3.724v7.446L5.935 16.17V8.625zm11.124 6.916l-4.85-2.805v5.62l4.85 2.805v-5.62zm1.588-6.916v7.547l-6.438 3.724v-7.446l6.438-3.725zm-8.274-3.724l4.85 2.805-4.85 2.805-4.85-2.805 4.85-2.805zm6.437-1.405L12 3l-6.438 3.724 6.438 3.724 6.438-3.724z" fill="#FFF"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Uniswap (UNI)</h3>
+                            <span class="ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">Rede Ethereum</span>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" value="0x4D7Ed65E18e05c7F932CC33dDC6FD7944438cb15" id="uni-address" class="flex-1 bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-gray-700 focus:outline-none" readonly>
+                            <button onclick="copyToClipboard('uni-address')" class="copy-btn bg-primary hover:bg-blue-600 text-white py-2 px-4 rounded-r-lg transition">
+                                Copiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="comecar" class="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Você ainda não conhece o mundo cripto?</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                    <p class="text-lg text-gray-700 mt-6 max-w-2xl mx-auto">
+                        Crie sua conta gratuita em uma das corretoras abaixo. Você não tem custo para abrir sua conta e começar a negociar. Usando o link de indicação, ainda ganha bônus ao iniciar seus investimentos.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Novadax -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-6">
+                            <img src="https://static.novadax.com/media/logo-seo.png" alt="Novadax" class="h-10">
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Ideal para iniciantes. Corretora nacional, regulamentada, interface em português, atendimento no Brasil.
+                        </p>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-medium">Bônus:</span> Ganha R$25 ao usar o link.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.novadax.com.br/sign?c=Y9NA35&s=1" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition text-center shadow-md">
+                            Abrir Conta na Novadax
+                        </a>
+                    </div>
+                    
+                    <!-- Crypto.com -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.seeklogo.com/logo-png/48/1/crypto-com-logo-png_seeklogo-481558.png" alt="Crypto.com" class="h-10">
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Uma das maiores corretoras do mundo, disponível no Brasil. Interface completa, recursos avançados, patrocinadora oficial da Fórmula 1.
+                        </p>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-medium">Bônus:</span> Ganha até R$25 ao usar o link.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://crypto.com/app/rv4mhrkjc7" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition text-center shadow-md">
+                            Abrir Conta na Crypto.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="seguranca" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Segurança em Primeiro Lugar</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                </div>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-red-800">Atenção: Segurança em Transações Cripto</h3>
+                            <div class="mt-2 text-sm text-red-700">
+                                <p>Sempre confirme o endereço de destino antes de enviar qualquer criptomoeda. Transações na blockchain são irreversíveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            Boas Práticas
+                        </h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Sempre confira os primeiros e últimos caracteres do endereço
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Use redes recomendadas para evitar perda de fundos
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Comece com pequenos valores para testar antes de enviar grandes quantias
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                            O Que Evitar
+                        </h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                Não envie criptomoedas para endereços sem verificação
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                Não compartilhe suas chaves privadas ou seed phrase
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                Desconfie de promessas de ganhos fáceis ou multiplicadores
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">CriptoEduca</h3>
+                    <p class="text-gray-400">Iniciativa para educar sobre criptomoedas e finanças descentralizadas no Brasil.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#doacoes" class="text-gray-400 hover:text-white transition">Doar</a></li>
+                        <li><a href="#seguranca" class="text-gray-400 hover:text-white transition">Segurança</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 CriptoEduca. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Copy to clipboard function
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            element.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            
+            // Show feedback
+            const originalText = element.nextElementSibling.textContent;
+            element.nextElementSibling.textContent = 'Copiado!';
+            setTimeout(() => {
+                element.nextElementSibling.textContent = originalText;
+            }, 2000);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
