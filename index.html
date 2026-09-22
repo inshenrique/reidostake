@@ -2,21 +2,23 @@
 <html lang="pt-BR">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KWK2D4PM');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KWK2D4PM');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apoie a educação sobre criptomoedas no Brasil. Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.">
-    <meta property="og:title" content="Apoie a Educação Cripto no Brasil">
-    <meta property="og:description" content="Iniciativa para educar sobre criptomoedas e finanças descentralizadas. Doe e ajude a expandir o conhecimento.">
+    <meta name="description" content="Rei do Stake: educação cripto de forma simples, responsável e acessível. Conteúdo sobre segurança, blockchain, staking e primeiros passos no universo cripto.">
+    <meta property="og:title" content="Rei do Stake | Educação Cripto">
+    <meta property="og:description" content="Educação cripto de forma simples, responsável e acessível.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://reidostake.com">
+    <meta property="og:url" content="https://reidostake.com/">
     <link rel="canonical" href="https://reidostake.com/">
-    <title>Apoie a Educação Cripto no Brasil | Doe em Criptomoedas</title>
+    <title>Rei do Stake | Educação Cripto</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,377 +27,392 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     colors: {
                         primary: '#3B82F6',
                         secondary: '#10B981',
-                        dark: '#1F2937',
-                        light: '#F3F4F6',
+                        ink: '#111827'
                     },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-in-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
+                    boxShadow: {
+                        soft: '0 18px 55px -24px rgba(15, 23, 42, .28)'
                     }
                 }
             }
         }
     </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        section { scroll-margin-top: 84px; }
+
         .gradient-text {
-            background-clip: text;
+            background: linear-gradient(90deg, #3B82F6, #10B981);
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-            background-image: linear-gradient(90deg, #3B82F6, #10B981);
         }
-        
-        .crypto-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+        .btn-lift {
+            transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
         }
-        
-        .menu-mobile {
-            transition: all 0.3s ease;
+        .btn-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -14px rgba(37, 99, 235, .65);
         }
-        
-        .copy-btn {
-            transition: all 0.2s ease;
+        .btn-lift:active { transform: translateY(0) scale(.985); }
+
+        .card-lift {
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
         }
-        
-        .copy-btn:hover {
-            transform: scale(1.05);
+        .card-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px -24px rgba(15, 23, 42, .3);
+            border-color: rgba(59, 130, 246, .28);
         }
-        
-        .copy-btn:active {
-            transform: scale(0.95);
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .btn-lift, .card-lift { transition: none; }
+            .btn-lift:hover, .card-lift:hover { transform: none; }
         }
     </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Educação Cripto Brasil",
-      "url": "https://reidostake.com",
-      "logo": "https://reidostake.com/logo.png",
-      "description": "Iniciativa para educar sobre criptomoedas e finanças descentralizadas no Brasil",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "BR"
-      }
+      "name": "Rei do Stake",
+      "url": "https://reidostake.com/",
+      "description": "Iniciativa de educação sobre criptomoedas, blockchain, staking e segurança digital no Brasil",
+      "address": { "@type": "PostalAddress", "addressCountry": "BR" }
     }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800 antialiased">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWK2D4PM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold gradient-text">CriptoEduca</a>
-            
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
-                <a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition">Sobre</a>
-                <a href="#doacoes" class="text-gray-700 hover:text-primary font-medium transition">Doar</a>
-                <a href="#conteudo" class="text-gray-700 hover:text-primary font-medium transition">Conteúdo</a>
-                <a href="#comecar" class="text-gray-700 hover:text-primary font-medium transition">Comece Agora</a>
-                <a href="#seguranca" class="text-gray-700 hover:text-primary font-medium transition">Segurança</a>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWK2D4PM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="bg-white/95 backdrop-blur border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
+            <a href="#home" class="text-xl sm:text-2xl font-extrabold gradient-text" aria-label="Rei do Stake - início">Rei do Stake</a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium" aria-label="Navegação principal">
+                <a href="#sobre" class="text-slate-600 hover:text-primary transition">Sobre</a>
+                <a href="#conteudo" class="text-slate-600 hover:text-primary transition">Conteúdo</a>
+                <a href="#seguranca" class="text-slate-600 hover:text-primary transition">Segurança</a>
+                <a href="#doacoes" class="text-slate-600 hover:text-primary transition">Apoiar</a>
+                <a href="#comecar" class="text-slate-600 hover:text-primary transition">Começar</a>
+                <a href="#transparencia" class="text-slate-600 hover:text-primary transition">Transparência</a>
+                <a href="#contato" class="text-slate-600 hover:text-primary transition">Contato</a>
             </nav>
-            
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+            <button id="menu-toggle" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="menu-mobile hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
-                <a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition">Sobre</a>
-                <a href="#doacoes" class="text-gray-700 hover:text-primary font-medium transition">Doar</a>
-                <a href="#conteudo" class="text-gray-700 hover:text-primary font-medium transition">Conteúdo</a>
-                <a href="#comecar" class="text-gray-700 hover:text-primary font-medium transition">Comece Agora</a>
-                <a href="#seguranca" class="text-gray-700 hover:text-primary font-medium transition">Segurança</a>
-                <a href="#contato" class="text-gray-700 hover:text-primary font-medium transition">Contato</a>
-            </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 bg-white">
+            <nav class="max-w-6xl mx-auto px-4 py-4 grid gap-1" aria-label="Navegação mobile">
+                <a href="#sobre" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Sobre</a>
+                <a href="#conteudo" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Conteúdo</a>
+                <a href="#seguranca" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Segurança</a>
+                <a href="#doacoes" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Apoiar</a>
+                <a href="#comecar" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Começar</a>
+                <a href="#transparencia" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Transparência</a>
+                <a href="#contato" class="mobile-link px-3 py-2 rounded-lg hover:bg-slate-50">Contato</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="py-20 md:py-28 bg-gradient-to-r from-blue-50 to-green-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center animate-fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Apoie a Educação Cripto no Brasil</h1>
-                <h2 class="text-xl md:text-2xl text-gray-700 mb-8">Sua doação ajuda a levar conhecimento, liberdade financeira e inclusão digital para mais pessoas.</h2>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#doacoes" class="bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition shadow-md">Doar Agora</a>
-                    <a href="#comecar" class="bg-white hover:bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-lg transition shadow-md">Começar no Mundo Cripto</a>
+    <main>
+        <section id="home" class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl" aria-hidden="true"></div>
+
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-600 shadow-sm mb-6">Educação cripto • Segurança • Autonomia</span>
+                <h1 class="max-w-4xl mx-auto text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-tight">
+                    Educação cripto de forma <span class="gradient-text">simples e responsável</span>
+                </h1>
+                <p class="max-w-2xl mx-auto mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed">
+                    O Rei do Stake nasceu para ajudar mais pessoas a entender criptomoedas, blockchain, segurança e novas possibilidades do universo descentralizado — sem promessas fáceis e sem complicação desnecessária.
+                </p>
+                <div class="mt-9 flex justify-center">
+                    <a href="#doacoes" class="btn-lift inline-flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20">
+                        Apoiar o projeto
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="sobre" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quem está por trás dessa iniciativa?</h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+        <section id="sobre" class="py-16 sm:py-20 lg:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <div class="text-center mb-10">
+                    <p class="text-sm font-bold tracking-widest uppercase text-primary mb-3">Sobre o projeto</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">Quem está por trás dessa iniciativa?</h2>
                 </div>
-                
-                <div class="max-w-3xl mx-auto text-center animate-slide-up">
-                    <p class="text-lg text-gray-700 mb-6">
-                        Olá, eu sou Henrique Rodrigues, entusiasta e educador cripto há mais de 7 anos. Ao longo desse tempo, já ajudei mais de 50 pessoas a acessarem esse universo e aprenderem sobre essa tecnologia que está cada vez mais presente na nossa rotina.
-                    </p>
-                    <p class="text-lg text-gray-700">
-                        Acredito que a educação financeira e o conhecimento sobre criptoativos são ferramentas poderosas para transformar vidas e criar novas oportunidades no Brasil. Com a sua ajuda, quero expandir conteúdos educativos, criar materiais gratuitos, realizar palestras e levar a cultura cripto a mais pessoas.
-                    </p>
+                <div class="max-w-3xl mx-auto text-center space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+                    <p>Olá, eu sou Henrique Rodrigues, entusiasta e educador cripto há mais de 7 anos. Ao longo desse tempo, já ajudei mais de 50 pessoas a acessarem esse universo e aprenderem sobre essa tecnologia que está cada vez mais presente na nossa rotina.</p>
+                    <p>Acredito que a educação financeira e o conhecimento sobre criptoativos são ferramentas poderosas para transformar vidas e criar novas oportunidades no Brasil. Com a sua ajuda, quero expandir conteúdos educativos, criar materiais gratuitos, realizar palestras e levar a cultura cripto a mais pessoas.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How Donations Will Be Used -->
-    <section id="conteudo" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Como sua contribuição faz a diferença</h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+        <section id="conteudo" class="py-16 sm:py-20 lg:py-24 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+                    <p class="text-sm font-bold tracking-widest uppercase text-primary mb-3">Aprendizado prático</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">O que você encontra aqui</h2>
+                    <p class="mt-4 text-slate-600 text-lg">Conteúdo pensado para quem quer entender antes de agir e tomar decisões com mais consciência.</p>
                 </div>
-                
-                <div class="max-w-2xl mx-auto">
-                    <!-- Crypto.com -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                        <div class="flex items-center justify-center mb-6">
-                            <img src="https://images.seeklogo.com/logo-png/48/1/crypto-com-logo-png_seeklogo-481558.png" alt="Crypto.com" class="h-16 md:h-20 w-auto">
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <article class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
                         </div>
-                        <p class="text-gray-600 mb-6 text-center">
-                            Uma das maiores corretoras do mundo, disponível no Brasil. Interface completa, recursos avançados e estrutura global para quem quer começar ou evoluir no universo cripto.
-                        </p>
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm text-yellow-700">
-                                        <span class="font-medium">Bônus:</span> Ganha até R$25 ao usar o link.
-                                    </p>
-                                </div>
-                            </div>
+                        <h3 class="font-bold text-lg text-slate-900">Conceitos de cripto</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Fundamentos de criptomoedas, blockchain e como essa tecnologia funciona na prática.</p>
+                    </article>
+
+                    <article class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
-                        <a href="https://crypto.com/app/rv4mhrkjc7" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg transition text-center shadow-md">
-                            Abrir Conta na Crypto.com
-                        </a>
+                        <h3 class="font-bold text-lg text-slate-900">Segurança</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Boas práticas para proteger sua carteira, suas chaves e reduzir riscos de golpes e erros.</p>
+                    </article>
+
+                    <article class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                        <div class="w-11 h-11 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Staking e DeFi</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Explicações acessíveis sobre staking, finanças descentralizadas e seus principais riscos.</p>
+                    </article>
+
+                    <article class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Primeiros passos</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Orientações para quem está começando e quer aprender com calma, sem atalhos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="seguranca" class="py-16 sm:py-20 lg:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+                    <p class="text-sm font-bold tracking-widest uppercase text-red-500 mb-3">Proteção em primeiro lugar</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">Segurança antes de qualquer transação</h2>
+                </div>
+
+                <div class="reveal max-w-4xl mx-auto mb-8 bg-red-50 border border-red-200 rounded-2xl p-5 sm:p-6 flex gap-4">
+                    <div class="shrink-0 w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.667 1.73-3L13.73 4c-.77-1.333-2.69-1.333-3.46 0L3.34 16c-.77 1.333.19 3 1.73 3z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-red-900">Um princípio que não muda</h3>
+                        <p class="mt-1 text-sm sm:text-base text-red-800 leading-relaxed">Nunca enviarei mensagem pedindo sua seed phrase, chave privada ou acesso à sua carteira. Sempre confirme o endereço e a rede antes de qualquer envio.</p>
                     </div>
                 </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Security Section -->
-    <section id="seguranca" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Segurança em Primeiro Lugar</h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-                </div>
-                
-                <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-8">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="text-sm font-medium text-red-800">Atenção: Segurança em Transações Cripto</h3>
-                            <div class="mt-2 text-sm text-red-700">
-                                <p>Sempre confirme o endereço de destino antes de enviar qualquer criptomoeda. Transações na blockchain são irreversíveis.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                            Boas Práticas
-                        </h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Sempre confira os primeiros e últimos caracteres do endereço
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Use redes recomendadas para evitar perda de fundos
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Comece com pequenos valores para testar antes de enviar grandes quantias
-                            </li>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <article class="reveal bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7">
+                        <h3 class="text-xl font-bold text-slate-900 mb-5">Boas práticas</h3>
+                        <ul class="space-y-4 text-slate-600">
+                            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span><span>Confira os primeiros e últimos caracteres do endereço.</span></li>
+                            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span><span>Confirme a rede correta antes de enviar.</span></li>
+                            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span><span>Comece com pequenos valores quando estiver testando um envio.</span></li>
                         </ul>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                            </svg>
-                            O Que Evitar
-                        </h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                                Não envie criptomoedas para endereços sem verificação
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                                Não compartilhe suas chaves privadas ou seed phrase
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                                Desconfie de promessas de ganhos fáceis ou multiplicadores
-                            </li>
+                    </article>
+
+                    <article class="reveal bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7">
+                        <h3 class="text-xl font-bold text-slate-900 mb-5">O que evitar</h3>
+                        <ul class="space-y-4 text-slate-600">
+                            <li class="flex gap-3"><span class="text-red-500 font-bold">×</span><span>Não compartilhe chaves privadas ou seed phrase.</span></li>
+                            <li class="flex gap-3"><span class="text-red-500 font-bold">×</span><span>Não envie ativos para endereços que você não verificou.</span></li>
+                            <li class="flex gap-3"><span class="text-red-500 font-bold">×</span><span>Desconfie de promessas de ganhos fáceis ou multiplicadores.</span></li>
                         </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="doacoes" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-blue-50/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 reveal">
+                    <p class="text-sm font-bold tracking-widest uppercase text-primary mb-3">Apoie a iniciativa</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">Ajude o projeto a continuar crescendo</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-slate-600 text-lg">As contribuições ajudam a manter o projeto, produzir materiais educativos e ampliar o conteúdo gratuito.</p>
+                </div>
+
+                <div class="reveal bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-soft">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z" fill="#2A5ADA"/>
+                                <path d="M12.373 15.838l2.744-1.514.639 1.117-3.383 1.864v1.995l5.623-3.24v-6.471l-5.623-3.24v6.472l-2.745-1.514-.639 1.117 3.384 1.864v-3.73l5.623-3.24V5.372l-5.623 3.24V5.372L6.75 8.612v6.471l5.623 3.24v-2.486z" fill="#FFF"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-950">Chainlink (LINK)</h3>
+                            <p class="text-sm font-semibold text-blue-600 mt-1">Rede Ethereum</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5">
+                        <p class="text-xs sm:text-sm font-semibold text-slate-500 mb-2">Endereço da carteira</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input id="link-address" type="text" readonly value="0xa462B22bB1d1fEbaf93dBa573c4C639dd91Bc4De" class="min-w-0 flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 font-mono outline-none">
+                            <button type="button" id="copy-wallet" class="btn-lift bg-primary hover:bg-blue-600 text-white font-semibold px-5 py-3 rounded-xl shrink-0">Copiar endereço</button>
+                        </div>
+                    </div>
+
+                    <p class="mt-5 text-sm text-slate-500 leading-relaxed"><strong class="text-slate-700">Importante:</strong> envie apenas LINK pela rede Ethereum para este endereço. Sempre confira o endereço completo antes de confirmar uma transação.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comecar" class="py-16 sm:py-20 lg:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 reveal">
+                    <p class="text-sm font-bold tracking-widest uppercase text-primary mb-3">Para quem está começando</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">Quer dar seus primeiros passos?</h2>
+                    <p class="mt-4 text-slate-600 text-lg">Se você ainda não possui conta em uma corretora, a Crypto.com é uma das plataformas disponíveis para começar.</p>
+                </div>
+
+                <div class="reveal max-w-2xl mx-auto bg-slate-950 text-white rounded-3xl p-7 sm:p-9 shadow-soft overflow-hidden relative">
+                    <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-blue-500/20 blur-3xl" aria-hidden="true"></div>
+                    <div class="relative">
+                        <div class="flex justify-center mb-7">
+                            <img src="https://images.seeklogo.com/logo-png/48/1/crypto-com-logo-png_seeklogo-481558.png" alt="Crypto.com" class="h-20 sm:h-24 w-auto object-contain bg-white rounded-2xl p-3">
+                        </div>
+                        <p class="text-center text-slate-300 leading-relaxed mb-7">O link abaixo é um link de indicação e pode gerar benefício ao projeto, sem custo adicional para você.</p>
+                        <a href="https://crypto.com/app/rv4mhrkjc7" target="_blank" rel="noopener noreferrer" class="btn-lift flex items-center justify-center w-full bg-white text-slate-950 hover:bg-slate-100 font-semibold py-3.5 px-6 rounded-xl">Abrir conta na Crypto.com</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-4 gradient-text">CriptoEduca</h3>
-                    <p class="text-gray-400">Iniciativa para educar sobre criptomoedas e finanças descentralizadas no Brasil.</p>
+        <section id="transparencia" class="py-16 sm:py-20 lg:py-24 bg-slate-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 reveal">
+                    <p class="text-sm font-bold tracking-widest uppercase text-primary mb-3">Transparência</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-950">O que você pode esperar deste projeto</h2>
                 </div>
-                <div class="text-center md:text-left">
-                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre</a></li>
-                        <li><a href="#doacoes" class="text-gray-400 hover:text-white transition">Doar</a></li>
-                        <li><a href="#seguranca" class="text-gray-400 hover:text-white transition">Segurança</a></li>
-                    </ul>
+
+                <div class="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                    <div class="reveal bg-white border border-slate-200 rounded-2xl p-5 flex gap-3"><span class="text-emerald-500 font-bold">✓</span><p class="text-slate-600"><strong class="text-slate-900">Projeto independente:</strong> conteúdo produzido com foco educacional.</p></div>
+                    <div class="reveal bg-white border border-slate-200 rounded-2xl p-5 flex gap-3"><span class="text-emerald-500 font-bold">✓</span><p class="text-slate-600"><strong class="text-slate-900">Sem promessa de rentabilidade:</strong> não existe retorno garantido em cripto.</p></div>
+                    <div class="reveal bg-white border border-slate-200 rounded-2xl p-5 flex gap-3"><span class="text-emerald-500 font-bold">✓</span><p class="text-slate-600"><strong class="text-slate-900">Doações voluntárias:</strong> apoiar é sempre uma escolha de quem acompanha o projeto.</p></div>
+                    <div class="reveal bg-white border border-slate-200 rounded-2xl p-5 flex gap-3"><span class="text-emerald-500 font-bold">✓</span><p class="text-slate-600"><strong class="text-slate-900">Links de indicação:</strong> podem gerar benefício ao projeto e serão identificados com clareza.</p></div>
                 </div>
-                <div class="text-center md:text-left">
-                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="bg-slate-950 text-white pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+                <div>
+                    <h2 class="text-2xl font-bold gradient-text">Rei do Stake</h2>
+                    <p class="mt-4 max-w-md text-slate-400 leading-relaxed">Educação sobre criptomoedas, blockchain, staking e segurança para quem quer aprender antes de decidir.</p>
+                    <p class="mt-6 text-sm text-slate-500 leading-relaxed">O conteúdo deste site possui caráter exclusivamente educacional e não constitui recomendação de investimento. Criptoativos envolvem riscos.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6">
+                    <h3 class="text-xl font-bold mb-4">Contato</h3>
                     <form action="https://formsubmit.co/hrcwb@hotmail.com" method="POST" class="space-y-3">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://reidostake.com/">
                         <input type="hidden" name="_subject" value="Novo contato pelo Rei do Stake">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="absolute opacity-0 pointer-events-none" aria-hidden="true">
 
-                        <!-- Honeypot anti-spam: usuários reais não veem este campo -->
-                        <input type="text" name="_honey" tabindex="-1" autocomplete="off"
-                               class="absolute opacity-0 pointer-events-none" aria-hidden="true">
+                        <label class="sr-only" for="email">Seu e-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Seu e-mail" required autocomplete="email" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                        <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="email"
-                               class="w-full px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <label class="sr-only" for="message">Sua mensagem</label>
+                        <textarea id="message" name="message" placeholder="Sua mensagem" required minlength="10" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
 
-                        <textarea name="message" placeholder="Sua mensagem" required minlength="10" rows="3"
-                                  class="w-full px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-
-                        <button type="submit"
-                                class="bg-primary hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition w-full">
-                            Enviar Mensagem
-                        </button>
+                        <button type="submit" class="btn-lift w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3 px-5 rounded-xl">Enviar mensagem</button>
                     </form>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; <span id="current-year"></span> CriptoEduca. Todos os direitos reservados.</p>
+
+            <div class="mt-12 pt-7 border-t border-white/10 flex flex-col sm:flex-row gap-3 justify-between items-center text-sm text-slate-500">
+                <p>&copy; <span id="current-year"></span> Rei do Stake. Todos os direitos reservados.</p>
+                <a href="#home" class="hover:text-white transition">Voltar ao topo ↑</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        const menuButton = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', String(!isOpen));
         });
-        
-        // Copy to clipboard function
-        function copyToClipboard(elementId) {
-            const element = document.getElementById(elementId);
-            element.select();
-            element.setSelectionRange(0, 99999);
-            document.execCommand('copy');
-            
-            // Show feedback
-            const originalText = element.nextElementSibling.textContent;
-            element.nextElementSibling.textContent = 'Copiado!';
-            setTimeout(() => {
-                element.nextElementSibling.textContent = originalText;
-            }, 2000);
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                    
-                    // Scroll to target
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
             });
         });
+
+        const copyButton = document.getElementById('copy-wallet');
+        const walletInput = document.getElementById('link-address');
+
+        copyButton.addEventListener('click', async () => {
+            const original = copyButton.textContent;
+            try {
+                await navigator.clipboard.writeText(walletInput.value);
+                copyButton.textContent = 'Copiado!';
+            } catch (error) {
+                walletInput.select();
+                document.execCommand('copy');
+                copyButton.textContent = 'Copiado!';
+            }
+            setTimeout(() => copyButton.textContent = original, 1800);
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
     </script>
 </body>
 </html>
